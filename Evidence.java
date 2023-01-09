@@ -41,7 +41,7 @@ public class Evidence {
                     book.vyhledejPojistneho();
                     break;
                 case "4":
-                    System.out.println("Libovolnou klávesou ukončíte program...");
+                    System.out.println("Libovolnou klávesou ukončíte program.");
                     break;
                 default:
                     System.out.println("Neplatná volba.");
