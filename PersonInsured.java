@@ -8,21 +8,23 @@ package cz.itnetwork.evidence;
  *
  * @author Jiří Kvarda<jirkakvardaemail.cz;
  */
-public class Pojistenec {
+public class PersonInsured {
 
+    // Attributes
     private String firstName;
     private String lastName;
     private String phone;
     private int age;
 
-    // Konstruktor pojištěnce
-    public Pojistenec(String firstName, String lastName, String phone, int age) {
+    // Constructor of the Insured
+    public PersonInsured(String firstName, String lastName, String phoneNumber, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phone = phone;
+        this.phone = phoneNumber;
         this.age = age;
     }
 
+    // Getters and setters
     public String getFirstName() {
         return firstName;
     }
@@ -55,8 +57,7 @@ public class Pojistenec {
         this.age = age;
     }
 
-    // Přepis vrací textovou podobu proměných.
-
+    // Returns the textual format of the variables
     @Override
     public String toString() {
         return String.format("%s %s %d     %s", firstName, lastName, age, phone);

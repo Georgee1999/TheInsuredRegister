@@ -12,57 +12,63 @@ import java.util.Scanner;
  * @author Jiří Kvarda<jirkakvardaemail.cz;
  */
 public class Book {
-    // instance scanneru pro čtení vstupu z konzole
-    private Scanner sc = new Scanner(System.in, "Windows-1250");
 
-    private final Databaze databaze;
+    // Instance of scanner for reading entrance from console
+    private Scanner sc = new Scanner(System.in);
 
-    // instance databaze
-    public Book() {
-        databaze = new Databaze();
-    }
-    // Metoda si vyžádá vstupy od uživatele
-    // Jednotlivé vstupy přidá do databaze(listu)
-    public void pridejPojistneho() {
-        System.out.println("Zadej jméno pojistného:");
+    // Instance of database
+    private final Database database = new Database();
+
+    // This method requests entrances from user.
+    // Each entrance adds to the database(List).
+    public void add() {
+        System.out.println("Insert name of the Person Insured:");
         String firstName = sc.nextLine();
 
-        System.out.println("Zadej prijmení:");
+        System.out.println("Insert lastname of the Person Insured:");
         String lastName = sc.nextLine();
 
-        System.out.println("Zadejte telefoní číslo:");
+        System.out.println("Insert phone number of the Person Insured:");
         String phone = sc.nextLine();
 
-        System.out.println("Zadejte vek:");
+        System.out.println("Insert age of the Person Insured:");
         int age = Integer.parseInt(sc.nextLine());
 
 
-        //Přidání pojistence do databaze.
-        databaze.pridejPojistence(firstName, lastName, phone, age);
+        // Add the insured to the database
+        database.addPersonInsured(firstName, lastName, phone, age);
 
-        System.out.println("Pojištěnec byl přidán.");
+        System.out.println("The insured was added.");
     }
 
-    // Metoda vypíše do konzole všechny pojištěnce z databáze(listu).
-    public void vypisVsechnyPojistence() {
-            System.out.println(databaze.vypisVsechnyPojistence());
+    // The method writes to the console all the insured from the database(List).
+    public void writeInAllTheInsured() {
+            System.out.println(database.theInsured());
     }
 
-    // Metoda vyhledává konkrétní pojištěnce podle jmena a prijmeni, které zadá uživatel do vstupu.
-    // Podle podmínky zjistí, jestli se nachází pojištěnec v databázi(listu) a vypíše ho.
-    public void vyhledejPojistneho() {
+    // The method searches the insured based on the first name and last name.
+    public void lookTheInsured() {
+        ArrayList<PersonInsured> InsuredFound = new ArrayList<>();
         
-        System.out.println("Zadej jméno pojistného:");
+        System.out.println("Insert name of the insured");
         String firstName = sc.nextLine();
-        System.out.println("Zadej příjmení pojistneho:");
+        System.out.println("Insert last name of the insured");
         String lastName = sc.nextLine();
 
-        if (databaze.vyhledejPojistneho(firstName,lastName).size()  > 0)
-        {
-            System.out.println(databaze.vyhledejPojistneho(firstName,lastName));
+        // Condition adds insured to InsuredFound.
+        for (PersonInsured p : database.theInsured()) {
+            if ((p.getFirstName().contains(firstName)&&
+                (p.getLastName().contains(lastName)))
+            ) {
+                InsuredFound.add(p);
+            }
         }
-        else{
-            System.out.println("Tento člověk nemá pojištění");
+
+        // Condition writes to the console the insured.
+        if (InsuredFound.size() > 0){
+            System.out.println(InsuredFound);
+        }else {
+            System.out.println("This person is not present in the database");
         }
     }
 
