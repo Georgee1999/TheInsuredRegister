@@ -15,7 +15,7 @@ public class Book {
     // instance scanneru pro čtení vstupu z konzole
     private Scanner sc = new Scanner(System.in, "Windows-1250");
 
-    private Databaze databaze;
+    private final Databaze databaze;
 
     // instance databaze
     public Book() {
@@ -36,16 +36,16 @@ public class Book {
         System.out.println("Zadejte vek:");
         int age = Integer.parseInt(sc.nextLine());
 
+
         //Přidání pojistence do databaze.
         databaze.pridejPojistence(firstName, lastName, phone, age);
 
-        System.out.println("Data byla uložena.");
-        System.out.println("Mužete pokračovat libovolnou klávesou.");
+        System.out.println("Pojištěnec byl přidán.");
     }
 
     // Metoda vypíše do konzole všechny pojištěnce z databáze(listu).
     public void vypisVsechnyPojistence() {
-            System.out.print(databaze.vypisVsechnyPojistence());
+            System.out.println(databaze.vypisVsechnyPojistence());
     }
 
     // Metoda vyhledává konkrétní pojištěnce podle jmena a prijmeni, které zadá uživatel do vstupu.

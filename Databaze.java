@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Databaze {
 
-    private ArrayList<Pojistenec> pojistenci;
+    private final ArrayList<Pojistenec> pojistenci;
     
 
     public Databaze() {
@@ -27,9 +27,7 @@ public class Databaze {
     //Metoda vypisuje všechny pojištěnce
     public ArrayList<Pojistenec> vypisVsechnyPojistence() {
         ArrayList<Pojistenec> nalezeno = new ArrayList<>();
-        for (Pojistenec p : pojistenci) {
-            nalezeno.add(p);
-        }
+        nalezeno.addAll(pojistenci);
         return nalezeno;
     }
 
