@@ -20,7 +20,7 @@ public class Databaze {
     }
 
     // Metoda mi přidáva do arrayListu nový pojištěnce...
-    public void pridejPojistence(String firstName, String lastName, int phone, int age) {
+    public void pridejPojistence(String firstName, String lastName, String phone, int age) {
         pojistenci.add(new Pojistenec(firstName, lastName, phone, age));
     }
 

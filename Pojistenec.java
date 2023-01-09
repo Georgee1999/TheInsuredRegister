@@ -12,11 +12,11 @@ public class Pojistenec {
 
     private String firstName;
     private String lastName;
-    private int phone;
+    private String phone;
     private int age;
 
     // Konstruktor pojištěnce
-    public Pojistenec(String firstName, String lastName, int phone, int age) {
+    public Pojistenec(String firstName, String lastName, String phone, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -39,11 +39,11 @@ public class Pojistenec {
         this.lastName = lastName;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -58,7 +58,7 @@ public class Pojistenec {
     // Přepis vrací textovou podobu proměných.
     @Override
     public String toString() {
-        return String.format("%s %s %d     %d", firstName, lastName, age, phone);
+        return String.format("%s %s %d     %s", firstName, lastName, age, phone);
     }
 
 }

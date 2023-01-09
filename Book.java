@@ -31,7 +31,7 @@ public class Book {
         String lastName = sc.nextLine();
 
         System.out.println("Zadejte telefoní číslo:");
-        int phone = Integer.parseInt(sc.nextLine());
+        String phone = sc.nextLine();
 
         System.out.println("Zadejte vek:");
         int age = Integer.parseInt(sc.nextLine());
