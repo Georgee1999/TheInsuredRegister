@@ -45,7 +45,7 @@ public class Book {
 
     // Metoda vypíše do konzole všechny pojištěnce z databáze(listu).
     public void vypisVsechnyPojistence() {
-            System.out.println(databaze.vypisVsechnyPojistence());
+            System.out.print(databaze.vypisVsechnyPojistence());
     }
 
     // Metoda vyhledává konkrétní pojištěnce podle jmena a prijmeni, které zadá uživatel do vstupu.

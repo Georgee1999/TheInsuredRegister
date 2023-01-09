@@ -56,6 +56,7 @@ public class Pojistenec {
     }
 
     // Přepis vrací textovou podobu proměných.
+
     @Override
     public String toString() {
         return String.format("%s %s %d     %s", firstName, lastName, age, phone);
