@@ -34,9 +34,7 @@ public class Book {
         System.out.println("Insert age of the Person Insured:");
         int age = Integer.parseInt(sc.nextLine());
 
-
-        // Add the insured to the database
-        database.addPersonInsured(firstName, lastName, phone, age);
+        database.theInsured().add(new PersonInsured(firstName, lastName, phone, age));
 
         System.out.println("The insured was added.");
     }
