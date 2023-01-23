@@ -21,7 +21,7 @@ public class TheInsuredRegister {
         Book book = new Book();
 
         String choice = "";
-        while (!choice.equals("4")) {
+        while (!choice.equals("5")) {
             System.out.println("---------------------------------------");
             System.out.println("List of the insured");
             System.out.println("---------------------------------------");
@@ -31,16 +31,28 @@ public class TheInsuredRegister {
             System.out.println("1 - Add new person insured");
             System.out.println("2 - Write all insured");
             System.out.println("3 - Look the insured");
-            System.out.println("4 - Finish");
+            System.out.println("4 - Delete insured");
+            System.out.println("5 - End");
             choice = sc.nextLine();
             System.out.println();
 
             switch (choice) {
-                case "1" -> book.add();
-                case "2" -> book.writeInAllTheInsured();
-                case "3" -> book.lookTheInsured();
-                case "4" -> System.out.println("Programme has ended.");
-                default -> System.out.println("Invalid choice.");
+                case "1":
+                    book.add();
+                    break;
+                case "2":
+                    book.writeInAllTheInsured();
+                    break;
+                case"3":
+                    book.lookTheInsured();
+                    break;
+                case"4":
+                    book.delete();
+                    break;
+                case"5":
+                    break;
+                default:
+                    System.out.println("Invalid choice");
             }
 
         }

@@ -5,6 +5,7 @@
 package cz.itnetwork.evidence;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -67,6 +68,23 @@ public class Book {
             System.out.println(InsuredFound);
         }else {
             System.out.println("This person is not present in the database");
+        }
+    }
+
+    // The method deletes the insured based on the first name and last name.
+    public void delete(){
+        System.out.println("Insert name of the insured");
+        String firstName = sc.nextLine();
+        System.out.println("Insert last name of the insured");
+        String lastName = sc.nextLine();
+
+
+        for (Iterator<PersonInsured> iterator = database.theInsured().iterator(); iterator.hasNext();){
+            PersonInsured p = iterator.next();
+            if (p.getFirstName().contains(firstName)&&
+                p.getLastName().contains(lastName)){
+                iterator.remove();
+            }
         }
     }
 
